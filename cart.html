@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Maison Douce - Giỏ hàng</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Cormorant+Garamond&family=Great+Vibes&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/maisondouce.html/style.css" />
+  <style>
+    body {
+      font-family: 'Cormorant Garamond', serif;
+      background-color: #fff8f0;
+      margin: 0;
+      padding: 40px;
+    }
+    header {
+      padding: 20px 40px; 
+      background-color: antiquewhite; 
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05); 
+      display: flex; 
+      align-items: center; 
+      justify-content: space-between;
+    }
+    .logo {
+      width: 100px; 
+      height: auto; 
+      margin-right: 20px
+    }
+    .maison-douce {
+      font-family: 'Great Vibes', cursive; 
+      font-size: 42px; 
+      color: #6b4e3d; 
+      margin: 0;
+    }
+    .header-list {
+      list-style: none; 
+      margin: 0; 
+      padding: 0;
+      display: flex; 
+      gap: 50px; 
+      font-family: 'Cormorant Garamond', serif; 
+      font-size: 18px
+    }  
+    .header-item {
+      text-decoration: none; 
+      color: #4b3621;
+    }
+
+    .footer{
+      display:flex; 
+      flex-direction: column; 
+    align-items:center; 
+    color: antiquewhite; 
+    font-family: 'Cormorant Garamond', serif; 
+    font-size: 18px; 
+    padding: 20px 40px; 
+    background-color: #4b3621; 
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.05)
+  }
+  .footer-list {
+    list-style: none; 
+    margin: 0; 
+    padding: 0; 
+    display: flex; 
+    gap: 25px
+  }
+
+  .footer-item {
+    text-decoration: none; 
+    color: antiquewhite
+  }
+    .cart-container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+    .cart-item {
+      display: flex;
+      gap: 20px;
+      border-bottom: 1px solid #eee;
+      padding: 20px 0;
+      align-items: center;
+    }
+    .cart-item img {
+      width: 100px;
+      height: 100px;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+    .cart-item-info {
+      flex: 1;
+    }
+    .cart-item-info h4 {
+      margin: 0;
+      color: #4b3621;
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+    }
+    .cart-item-info p {
+      margin: 4px 0;
+      color: #6b4e3d;
+    }
+    .cart-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 30px;
+    }
+    .empty-cart {
+      text-align: center;
+      padding: 60px 20px;
+    }
+    .empty-cart h3 {
+      color: #6b4e3d;
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 20px;
+    }
+    .empty-cart p {
+      color: #9c836a;
+      margin-bottom: 30px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: #b17f62;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+    .btn:hover {
+      background-color: #9a6d52;
+    }
+    .btn-secondary {
+      background-color: #f4e5d8;
+      color: #6b4e3d;
+    }
+    .btn-secondary:hover {
+      background-color: #e9d6c5;
+    }
+    .btn-danger {
+      background-color: #c0392b;
+    }
+    .btn-danger:hover {
+      background-color: #a93226;
+    }
+    h2 {
+      text-align: center;
+      color: #6b4e3d;
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 30px;
+    }
+    .cart-summary {
+      margin-top: 30px;
+      padding: 20px;
+      background-color: #faf4ee;
+      border-radius: 10px;
+    }
+    .cart-total {
+      display: flex;
+      justify-content: space-between;
+      font-size: 18px;
+      font-weight: bold;
+      color: #6b4e3d;
+      margin-bottom: 20px;
+    }
+    .cart-checkout {
+      text-align: right;
+    }
+        /* Định dạng form cập nhật số lượng */
+    .quantity-form {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .quantity-form input {
+      width: 50px;
+      text-align: center;
+      padding: 5px;
+      border: 1px solid #d3bfa7;
+      border-radius: 6px;
+    }
+    .quantity-form button {
+        padding: 5px 10px;
+        background-color: #f4e5d8;
+        color: #6b4e3d;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+    .remove-form {
+      display: inline;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div style="display: flex; align-items: center;">
+    <a href="/maisondouce.html/homepage.html" style="display: flex; align-items: center; text-decoration: none;">
+      <img src="/maisondouce.html/logobanner/logo.svg" alt="Logo Maison Douce" class="logo" />
+      <h1 class="maison-douce">Maison Douce</h1>
+    </a>
+  </div>
+
+  <nav>
+    <ul class="header-list" >
+      <li><a href="/maisondouce.html/homepage.html" class="header-item">Trang chủ</a></li>
+      <li><a href="/maisondouce.html/about.html" class="header-item">Giới thiệu</a></li>
+      <li><a href="/maisondouce.html/products.html" class="header-item">Sản phẩm</a></li>
+      <li><a href="/maisondouce.html/blog.html" class="header-item">Blog</a></li>
+      <li><a href="/maisondouce.html/register.html" class="header-item">Đăng nhập</a></li>
+      <li><a href="/maisondouce.html/cart.html" class="header-item">Giỏ hàng</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="cart-container" id="cart-container">
+  <!-- Nếu giỏ hàng trống, hiển thị tin nhắn -->
+  <div id="empty-cart-message" style="display: none;" class="empty-cart">
+    <img src="/maisondouce.html/logobanner/shoppingcart.svg" alt="Giỏ hàng trống" style="width: 100px; margin-bottom: 20px;" onerror="this.src='https://via.placeholder.com/100x100?text=🛒'">
+    <h3>Chọn bánh đi nhé</h3>
+    <p>Giỏ hàng của bạn đang trống. Hãy khám phá các sản phẩm tuyệt vời của chúng tôi.</p>
+    <a href="/maisondouce.html/products.html" class="btn">Xem các sản phẩm</a>
+  </div>
+  
+  <!-- Nếu có sản phẩm trong giỏ hàng, hiển thị danh sách -->
+  <div id="cart-items-container" style="display: none;">
+    <h2>Sản phẩm trong giỏ hàng</h2>
+    <div id="cart-items">
+      <!-- Các mục giỏ hàng sẽ được thêm vào đây bởi JavaScript -->
+    </div>
+    
+    <div class="cart-summary">
+      <div class="cart-total">
+        <span>Tổng cộng:</span>
+        <span id="cart-total-price">0đ</span>
+      </div>
+      <div class="cart-checkout">
+        <button onclick="clearCart()" class="btn btn-secondary">Xóa giỏ hàng</button>
+        <a href="/maisondouce.html/checkout.html" class="btn">Thanh toán</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // JavaScript tối thiểu cần thiết để hiển thị giỏ hàng
+  document.addEventListener('DOMContentLoaded', function() {
+    renderCart();
+  });
+  
+  function renderCart() {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const emptyCartMessage = document.getElementById("empty-cart-message");
+    const cartItemsContainer = document.getElementById("cart-items-container");
+    const cartItemsElement = document.getElementById("cart-items");
+    const cartTotalPrice = document.getElementById("cart-total-price");
+    
+    // Hiển thị thông báo giỏ hàng trống hoặc danh sách sản phẩm
+    if (cart.length === 0) {
+      emptyCartMessage.style.display = "block";
+      cartItemsContainer.style.display = "none";
+      return;
+    }
+    
+    emptyCartMessage.style.display = "none";
+    cartItemsContainer.style.display = "block";
+    
+    // Hiển thị từng sản phẩm
+    let cartHTML = '';
+    let totalPrice = 0;
+    
+    cart.forEach((item, index) => {
+      const itemTotal = item.price * item.quantity;
+      totalPrice += itemTotal;
+      
+      cartHTML += `
+        <div class="cart-item">
+          <img src="${item.image}" alt="${item.name}" onerror="this.src='https://via.placeholder.com/100x100?text=Sản phẩm'">
+          <div class="cart-item-info">
+            <h4>${item.name}</h4>
+            <p>${item.description || ''}</p>
+            <p>Giá: ${item.price.toLocaleString()}đ</p>
+            <p>Thành tiền: ${itemTotal.toLocaleString()}đ</p>
+            
+            <div class="quantity-form">
+              <form onsubmit="return updateQuantity(${index}, this.quantity.value)">
+                <input type="number" name="quantity" value="${item.quantity}" min="1" required>
+                <button type="submit">Cập nhật</button>
+              </form>
+              
+              <form class="remove-form" onsubmit="return removeItem(${index})">
+                <button type="submit" class="btn btn-danger" style="padding: 5px 10px; font-size: 14px;">Xóa</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      `;
+    });
+    
+    cartItemsElement.innerHTML = cartHTML;
+    cartTotalPrice.textContent = totalPrice.toLocaleString() + 'đ';
+  }
+  
+  // Hàm cập nhật số lượng
+  function updateQuantity(index, newQuantity) {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    cart[index].quantity = parseInt(newQuantity);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    renderCart();
+    return false; // Ngăn form submit và tải lại trang
+  }
+  
+  // Hàm xóa sản phẩm
+  function removeItem(index) {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    cart.splice(index, 1);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    renderCart();
+    return false; // Ngăn form submit và tải lại trang
+  }
+  
+  // Hàm xóa giỏ hàng
+  function clearCart() {
+    if (confirm('Bạn có chắc muốn xóa tất cả sản phẩm trong giỏ hàng?')) {
+      localStorage.setItem("cart", JSON.stringify([]));
+      renderCart();
+    }
+  }
+</script>
+<footer class="footer">
+  <nav>
+    <ul class="footer-list">
+        <li><a href="/maisondouce.html/contact.html" class="footer-item">Liên hệ</a></li>
+        <li><a href="/maisondouce.html/faq.html" class="footer-item">FAQ</a></li>
+        <li><a href="/maisondouce.html/career.html" class="footer-item">Tuyển dụng</a></li>
+    </ul> 
+  </nav>
+</footer>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maison Douce - Câu hỏi thường gặp</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Cormorant+Garamond&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/maisondouce.html/style.css" />
+</head>
+<body>
+    <header>
+        <div style="display: flex; align-items: center;">
+          <a href="/maisondouce.html/homepage.html" style="display: flex; align-items: center; text-decoration: none;">
+            <img src="/maisondouce.html/logobanner/logo.svg" alt="Logo Maison Douce" class="logo" />
+            <h1 class="maison-douce">Maison Douce</h1>
+          </a>
+        </div>
+      
+        <nav>
+          <ul class="header-list" >
+            <li><a href="/maisondouce.html/homepage.html" class="header-item">Trang chủ</a></li>
+            <li><a href="/maisondouce.html/about.html" class="header-item">Giới thiệu</a></li>
+            <li><a href="/maisondouce.html/products.html" class="header-item">Sản phẩm</a></li>
+            <li><a href="/maisondouce.html/blog.html" class="header-item">Blog</a></li>
+            <li><a href="/maisondouce.html/register.html" class="header-item">Đăng nhập</a></li>
+            <li><a href="/maisondouce.html/cart.html" class="header-item">Giỏ hàng</a></li>
+          </ul>
+        </nav>
+      </header>
+
+    <div class="content">
+        <h2>FAQ</h2>
+        <div class="accordion">
+            <div class="accordion-item">
+                <div class="accordion-header">Sản phẩm của Maison Douce có gì đặc biệt?</div>
+                <div class="accordion-content">
+                    <ul>
+                        <li>Nguyên liệu cao cấp nhập khẩu, không sử dụng chất bảo quản độc hại.</li>
+                        <li>Công thức độc quyền, được cố vấn bởi chuyên gia ẩm thực Pháp.</li>
+                        <li>Từng sản phẩm đều được làm thủ công tại xưởng với tiêu chuẩn nghiêm ngặt.</li>
+                        <li>Đóng gói thẩm mỹ, thích hợp làm quà tặng sang trọng.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">Làm thế nào để tôi biết sản phẩm phù hợp với nhu cầu?</div>
+                <div class="accordion-content">
+                    <p>Bạn có thể xác định nhu cầu theo dịp (sinh nhật, quà tặng, tiệc cưới, lễ hội...) hoặc theo sở thích (ít ngọt, không béo, gluten-free…).</p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">Có thể thanh toán bằng những phương thức nào?</div>
+                <div class="accordion-content">
+                    <ul>
+                        <li>Thanh toán Online: Thẻ ngân hàng, Visa/MasterCard, Ví điện tử (Momo, ZaloPay, ShopeePay).</li>
+                        <li>Thanh toán khi nhận hàng (COD): Áp dụng cho đơn hàng nội thành.</li>
+                        <li>Chuyển khoản trực tiếp: Hóa đơn công ty có thể được hỗ trợ riêng theo yêu cầu.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">Chi phí vận chuyển là bao nhiêu?</div>
+                <div class="accordion-content">
+                    <p>Phí vận chuyển phụ thuộc vào khoảng cách từ xưởng giao hàng, loại dịch vụ (giao nhanh hay tiêu chuẩn), và tổng giá trị đơn hàng.</p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">Tôi có thể liên hệ với bạn qua đâu để giải đáp thắc mắc?</div>
+                <div class="accordion-content">
+                    <ul>
+                        <li>Hotline: 0317151818</li>
+                        <li>Email: support@maisondouce.vn</li>
+                        <li>Fanpage Facebook: @MaisonDouce</li>
+                        <li><a href="/maisondouce.html/contact.html"; style="color: brown;">Trang liên hệ của chúng tôi</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <ul class="footer-list">
+            <li><a href="/maisondouce.html/contact.html" class="footer-item">Liên hệ</a></li>
+            <li><a href="/maisondouce.html/faq.html" class="footer-item">FAQ</a></li>
+            <li><a href="/maisondouce.html/career.html" class="footer-item">Tuyển dụng</a></li>
+        </ul> 
+    </nav>
+    </footer>
+
+    <script>
+        const headers = document.querySelectorAll('.accordion-header');
+        headers.forEach(header => {
+            header.addEventListener('click', () => {
+                header.classList.toggle('active');
+                const content = header.nextElementSibling;
+                if (content.style.display === 'block') {
+                    content.style.display = 'none';
+                } else {
+                    content.style.display = 'block';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Maison Douce - Thanh toán</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Cormorant+Garamond&family=Great+Vibes&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/maisondouce.html/style.css" />
+  <style>
+    body {
+      font-family: 'Cormorant Garamond', serif;
+      background-color: #fff8f0;
+      margin: 0;
+      padding: 40px;
+    }
+    header {
+      padding: 20px 40px; 
+      background-color: antiquewhite; 
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05); 
+      display: flex; 
+      align-items: center; 
+      justify-content: space-between;
+    }
+    .logo {
+      width: 100px; 
+      height: auto; 
+      margin-right: 20px
+    }
+    .maison-douce {
+      font-family: 'Great Vibes', cursive; 
+      font-size: 42px; 
+      color: #6b4e3d; 
+      margin: 0;
+    }
+    .header-list {
+      list-style: none; 
+      margin: 0; 
+      padding: 0;
+      display: flex; 
+      gap: 50px; 
+      font-family: 'Cormorant Garamond', serif; 
+      font-size: 18px
+    }  
+    .header-item {
+      text-decoration: none; 
+      color: #4b3621;
+    }
+
+    .footer{
+      display:flex; 
+      flex-direction: column; 
+    align-items:center; 
+    color: antiquewhite; 
+    font-family: 'Cormorant Garamond', serif; 
+    font-size: 18px; 
+    padding: 20px 40px; 
+    background-color: #4b3621; 
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.05)
+  }
+  .footer-list {
+    list-style: none; 
+    margin: 0; 
+    padding: 0; 
+    display: flex; 
+    gap: 25px
+  }
+
+  .footer-item {
+    text-decoration: none; 
+    color: antiquewhite
+  }
+    .checkout-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+    .checkout-form {
+      background: white;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+    .order-summary {
+      background: white;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      align-self: flex-start;
+    }
+    h2 {
+      color: #6b4e3d;
+      font-family: 'Playfair Display', serif;
+      margin-top: 0;
+      margin-bottom: 20px;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      color: #6b4e3d;
+      margin-bottom: 8px;
+      font-size: 18px;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #d3bfa7;
+      border-radius: 8px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 16px;
+      color: #4b3621;
+      box-sizing: border-box;
+    }
+    textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: #b17f62;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+    .btn:hover {
+      background-color: #9a6d52;
+    }
+    .btn-secondary {
+      background-color: #f4e5d8;
+      color: #6b4e3d;
+    }
+    .btn-secondary:hover {
+      background-color: #e9d6c5;
+    }
+    .cart-item {
+      display: flex;
+      gap: 15px;
+      border-bottom: 1px solid #eee;
+      padding: 15px 0;
+    }
+    .cart-item img {
+      width: 60px;
+      height: 60px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+    .cart-item-info {
+      flex: 1;
+    }
+    .cart-item-info h4 {
+      margin: 0;
+      font-size: 18px;
+      color: #4b3621;
+    }
+    .cart-item-info p {
+      margin: 4px 0;
+      color: #6b4e3d;
+    }
+    .cart-total {
+      margin-top: 20px;
+      padding-top: 15px;
+      border-top: 2px dashed #f4e5d8;
+    }
+    .price-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+    .price-row.total {
+      font-size: 20px;
+      font-weight: bold;
+      color: #b17f62;
+      margin-top: 15px;
+    }
+    .payment-methods {
+      margin-top: 20px;
+    }
+    .payment-option {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    .payment-option input {
+      width: auto;
+      margin-right: 10px;
+    }
+    .actions {
+      margin-top: 30px;
+      display: flex;
+      justify-content: space-between;
+    }
+    @media (max-width: 768px) {
+      .checkout-container {
+        grid-template-columns: 1fr;
+      }
+      .order-summary {
+        order: -1;
+      }
+    }
+    .empty-cart-message {
+      text-align: center;
+      padding: 40px;
+      color: #6b4e3d;
+    }
+    .note {
+      font-size: 14px;
+      color: #8a7968;
+      margin-top: 8px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div style="display: flex; align-items: center;">
+    <a href="/maisondouce.html/homepage.html" style="display: flex; align-items: center; text-decoration: none;">
+      <img src="/maisondouce.html/logobanner/logo.svg" alt="Logo Maison Douce" class="logo" />
+      <h1 class="maison-douce">Maison Douce</h1>
+    </a>
+  </div>
+
+  <nav>
+    <ul class="header-list" >
+      <li><a href="/maisondouce.html/homepage.html" class="header-item">Trang chủ</a></li>
+      <li><a href="/maisondouce.html/about.html" class="header-item">Giới thiệu</a></li>
+      <li><a href="/maisondouce.html/products.html" class="header-item">Sản phẩm</a></li>
+      <li><a href="/maisondouce.html/blog.html" class="header-item">Blog</a></li>
+      <li><a href="/maisondouce.html/register.html" class="header-item">Đăng nhập</a></li>
+      <li><a href="/maisondouce.html/cart.html" class="header-item">Giỏ hàng</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div id="checkout-container" class="checkout-container">
+  <!-- Hiển thị nếu giỏ hàng trống -->
+  <div id="empty-cart" class="empty-cart-message" style="grid-column: 1 / span 2; display: none;">
+    <h2>Giỏ hàng của bạn đang trống</h2>
+    <p>Vui lòng thêm sản phẩm vào giỏ hàng trước khi thanh toán.</p>
+    <a href="/maisondouce.html/products.html" class="btn">Tiếp tục mua sắm</a>
+  </div>
+
+  <!-- Form thông tin thanh toán -->
+  <div id="checkout-form" class="checkout-form">
+    <h2>Thông tin thanh toán</h2>
+    <form id="order-form">
+      <div class="form-group">
+        <label for="fullname">Họ và tên</label>
+        <input type="text" id="fullname" name="fullname" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="phone">Số điện thoại</label>
+        <input type="tel" id="phone" name="phone" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="address">Địa chỉ giao hàng</label>
+        <textarea id="address" name="address" required></textarea>
+      </div>
+      
+      <div class="form-group">
+        <label for="delivery-time">Thời gian giao hàng</label>
+        <select id="delivery-time" name="delivery-time">
+          <option value="morning">Buổi sáng (8:00 - 12:00)</option>
+          <option value="afternoon">Buổi chiều (12:00 - 17:00)</option>
+          <option value="evening">Buổi tối (17:00 - 21:00)</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label for="note">Ghi chú đơn hàng</label>
+        <textarea id="note" name="note" placeholder="Yêu cầu đặc biệt, thông tin thêm về thời gian giao hàng..."></textarea>
+      </div>
+      
+      <div class="payment-methods">
+        <h3>Phương thức thanh toán</h3>
+        
+        <div class="payment-option">
+          <input type="radio" id="cod" name="payment" value="cod" checked>
+          <label for="cod">Thanh toán khi nhận hàng (COD)</label>
+        </div>
+        
+        <div class="payment-option">
+          <input type="radio" id="bank-transfer" name="payment" value="bank-transfer">
+          <label for="bank-transfer">Chuyển khoản ngân hàng</label>
+        </div>
+        
+        <div class="payment-option">
+          <input type="radio" id="momo" name="payment" value="momo">
+          <label for="momo">Ví điện tử MoMo</label>
+        </div>
+      </div>
+      
+      <div class="actions">
+        <a href="/maisondouce.html/cart.html" class="btn btn-secondary">Quay lại giỏ hàng</a>
+        <button type="submit" class="btn">Đặt hàng</button>
+      </div>
+    </form>
+  </div>
+  
+  <!-- Thông tin đơn hàng -->
+  <div id="order-summary" class="order-summary">
+    <h2>Thông tin đơn hàng</h2>
+    <div id="cart-items">
+      
+    </div>
+    
+    <div class="cart-total">
+      <div class="price-row">
+        <span>Tạm tính:</span>
+        <span id="subtotal">0đ</span>
+      </div>
+      <div class="price-row">
+        <span>Phí vận chuyển:</span>
+        <span id="shipping">30.000đ</span>
+      </div>
+      <div class="price-row total">
+        <span>Tổng cộng:</span>
+        <span id="total">0đ</span>
+      </div>
+      <p class="note">Đã bao gồm thuế VAT nếu có</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const emptyCartElement = document.getElementById('empty-cart');
+    const checkoutFormElement = document.getElementById('checkout-form');
+    const orderSummaryElement = document.getElementById('order-summary');
+    const cartItemsElement = document.getElementById('cart-items');
+    const subtotalElement = document.getElementById('subtotal');
+    const totalElement = document.getElementById('total');
+    
+    // Kiểm tra xem giỏ hàng có trống không
+    if (cart.length === 0) {
+      emptyCartElement.style.display = 'block';
+      checkoutFormElement.style.display = 'none';
+      orderSummaryElement.style.display = 'none';
+      return;
+    }
+    
+    // Hiển thị các sản phẩm trong giỏ hàng
+    let cartHTML = '';
+    let subtotal = 0;
+    
+    cart.forEach(item => {
+      const itemTotal = item.price * item.quantity;
+      subtotal += itemTotal;
+      
+      cartHTML += `
+        <div class="cart-item">
+          <img src="${item.image}" alt="${item.name}" onerror="this.src='https://via.placeholder.com/60x60?text=Bánh'">
+          <div class="cart-item-info">
+            <h4>${item.name}</h4>
+            <p>${item.description || ''}</p>
+            <p>${item.quantity} x ${item.price.toLocaleString()}đ</p>
+          </div>
+        </div>
+      `;
+    });
+    
+    cartItemsElement.innerHTML = cartHTML;
+    
+    // Tính toán và hiển thị giá trị
+    const shipping = 30000; // Phí vận chuyển cố định
+    const total = subtotal + shipping;
+    
+    subtotalElement.textContent = subtotal.toLocaleString() + 'đ';
+    totalElement.textContent = total.toLocaleString() + 'đ';
+    
+    // Xử lý form đặt hàng
+    document.getElementById('order-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Lấy thông tin từ form
+      const formData = {
+        fullname: document.getElementById('fullname').value,
+        phone: document.getElementById('phone').value,
+        email: document.getElementById('email').value,
+        address: document.getElementById('address').value,
+        deliveryTime: document.getElementById('delivery-time').value,
+        note: document.getElementById('note').value,
+        payment: document.querySelector('input[name="payment"]:checked').value,
+        items: cart,
+        subtotal: subtotal,
+        shipping: shipping,
+        total: total
+      };
+      
+      // Lưu thông tin đơn hàng vào localStorage (có thể thay bằng gửi đến server)
+      localStorage.setItem('lastOrder', JSON.stringify(formData));
+      
+      // Xóa giỏ hàng
+      localStorage.removeItem('cart');
+      
+      // Chuyển hướng đến trang xác nhận đơn hàng
+      window.location.href = 'order-confirmation.html';
+    });
+  });
+</script>
+
+<footer class="footer">
+  <ul class="footer-list">
+      <li><a href="/maisondouce.html/contact.html" class="footer-item">Liên hệ</a></li>
+      <li><a href="/maisondouce.html/faq.html" class="footer-item">FAQ</a></li>
+      <li><a href="/maisondouce.html/career.html" class="footer-item">Tuyển dụng</a></li>
+  </ul> 
+</nav>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maison Douce - Xác nhận đơn hàng</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Cormorant+Garamond&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/maisondouce.html/style.css" />
+</head>
+<header>
+  <div style="display: flex; align-items: center;">
+    <a href="/maisondouce.html/homepage.html" style="display: flex; align-items: center; text-decoration: none;">
+      <img src="/maisondouce.html/logobanner/logo.svg" alt="Logo Maison Douce" class="logo" />
+      <h1 class="maison-douce">Maison Douce</h1>
+    </a>
+  </div>
+
+  <nav>
+    <ul class="header-list" >
+      <li><a href="/maisondouce.html/homepage.html" class="header-item">Trang chủ</a></li>
+      <li><a href="/maisondouce.html/about.html" class="header-item">Giới thiệu</a></li>
+      <li><a href="/maisondouce.html/products.html" class="header-item">Sản phẩm</a></li>
+      <li><a href="/maisondouce.html/blog.html" class="header-item">Blog</a></li>
+      <li><a href="/maisondouce.html/register.html" class="header-item">Đăng nhập</a></li>
+      <li><a href="/maisondouce.html/cart.html" class="header-item">Giỏ hàng</a></li>
+    </ul>
+  </nav>
+</header>
+<body>
+<div class="confirmation-container">
+    <div class="confirmation">
+      <h1>Merci beaucoup!</h1>
+      <p style="font-size: 20px;">Cảm ơn bạn đã đặt hàng tại <strong>Maison Douce</strong>. Chúng mình đã nhận được đơn hàng của bạn và sẽ chuẩn bị thật kỹ lưỡng từng chiếc bánh!</p>
+      <br>
+      <p style="font-size: 20px;">Mã đơn hàng của bạn là: <span class="order-code"; style="color: brown;"><strong id="order-id"></strong></p></span></p>
+      <br>
+      <p style="font-size: 21px;"><i>Chúng mình sẽ liên hệ để xác nhận đơn và hẹn thời gian giao bánh thật sớm nhé!</i></p>
+      <a href="/maisondouce.html/homepage.html" class="button">Về trang chủ</a>
+    </div>
+    <div class="confirmation-image">
+        <video autoplay muted loop playsinline style="position:relative; width: 100%; height: 100%; object-fit: cover; z-index: 0;" alt="Thank you">
+            <source src="/maisondouce.html/aboutuspic/6b01e0afb13dad2fbec4aa22bda030a5_t4.mp4" type="video/mp4">
+        </video>
+        <a href="/maisondouce.html/homepage.html" class="button">Về trang chủ</a>    
+    </div>
+</div>
+  </body>
+  <script>
+    // Hàm tạo mã đơn hàng
+    function generateOrderID() {
+      const now = new Date();
+      const year = now.getFullYear();
+      const month = String(now.getMonth() + 1).padStart(2, '0');
+      const day = String(now.getDate()).padStart(2, '0');
+      const hour = String(now.getHours()).padStart(2, '0');
+      const minute = String(now.getMinutes()).padStart(2, '0');
+      return `MD-${year}${month}${day}${hour}${minute}`;
+    }
+  
+    // Chèn mã vào chỗ hiển thị
+    document.addEventListener('DOMContentLoaded', function () {
+      const orderID = generateOrderID();
+      const orderIDElement = document.getElementById('order-id');
+      if (orderIDElement) {
+        orderIDElement.textContent = orderID;
+      }
+    });
+  </script>
+  <footer class="footer">
+    <ul class="footer-list">
+        <li><a href="/maisondouce.html/contact.html" class="footer-item">Liên hệ</a></li>
+        <li><a href="/maisondouce.html/faq.html" class="footer-item">FAQ</a></li>
+        <li><a href="/maisondouce.html/career.html" class="footer-item">Tuyển dụng</a></li>
+    </ul> 
+</nav>
+</footer>
+  </html>

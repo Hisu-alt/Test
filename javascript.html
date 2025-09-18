@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script> 
+        function hienMenu(){
+            document.getElementById("demo").style.display = 'block';
+        }
+        function anMenu(){
+            document.getElementById("demo").style.display = 'none';
+        } 
+    </script>
+</head>
+<body> 
+    <button onmouseover="hienMenu()"onmouseout="anMenu()">Menu</button>
+        <ul  id="demo" style="display: none;">
+            <li>submenu</li>
+            <li>submenu</li>
+            <li>submenu</li>
+            <li>submenu</li>
+        </ul>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    </head>
+    <body>
+        <p>Thời gian hiện tại: <span id="time"></span></p>
+        <!--<p>
+    <script>
+        function updateTime();
+            let x = new Date();
+            document.getElementbyId("time").innerText = x.toLocateTimeString(); 
+    }
+    setInterval(updateTime, 1000)
+    </script>
+    </body>
+    </html>

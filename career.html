@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maison Douce - Trang Tuyển Dụng</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Cormorant+Garamond&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/maisondouce.html/style.css" />
+  <style>
+    body {
+      font-family: 'Cormorant Garamond', serif;
+      background-color: #f9f5f0;
+      color: #4b3621;
+      margin: 0;
+      padding: 0 20px;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      color: #4b2e1e;
+      text-align: center;
+      font-size: 36px;
+      margin-top: 30px;
+    }
+
+    h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: bold;
+      color: #5b3c2c;
+      margin-top: 20px;
+    }
+
+    #jobsContainer {
+      background-color: #4b3621;
+      padding: 40px 20px;
+      border-radius: 12px;
+      margin-top: 30px;
+    }
+
+    .job {
+      background: #f9f5f0;
+      color: #4b3621;
+      border: 1px solid #e0dcd5;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .job p {
+      color: #462f22;
+      font-size: 17px;
+      text-align: left;
+    }
+
+    .job p strong {
+      color: #6b4e3d;
+    }
+
+    .job h3 {
+      text-align: left;
+    }
+
+    button {
+      background-color: #6b4e3d;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 10px;
+      font-family: 'Playfair Display', serif;
+    }
+
+    form {
+      display: none;
+      flex-direction: column;
+      gap: 10px;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      padding: 30px;
+      border: 2px solid #d5c3b1;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+    }
+
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      z-index: 999;
+    }
+
+    input, textarea {
+      padding: 10px;
+      border: 1px solid #a08d7b;
+      border-radius: 6px;
+      font-size: 16px;
+      color: #4b3621;
+    }
+
+    input[type="file"] {
+      padding: 5px;
+    }
+  </style>
+</head>
+<body>
+<div class="overlay" id="overlay" onclick="closeForm()"></div>
+<header>
+  <div style="display: flex; align-items: center;">
+    <a href="/maisondouce.html/homepage.html" style="display: flex; align-items: center; text-decoration: none;">
+      <img src="/maisondouce.html/logobanner/logo.svg" alt="Logo Maison Douce" style="width: 100px; height: auto; margin-right: 20px;" />
+      <h1 style="font-family: 'Great Vibes', cursive; font-size: 42px; color: #6b4e3d; margin: 0;">Maison Douce</h1>
+    </a>
+  </div>
+  <nav>
+    <ul style="list-style: none; margin: 0; padding: 0; display: flex; gap: 50px; font-family: 'Cormorant Garamond', serif; font-size: 18px;">
+      <li><a href="/maisondouce.html/homepage.html" style="text-decoration: none; color: #4b3621;">Trang chủ</a></li>
+      <li><a href="/maisondouce.html/about.html" style="text-decoration: none; color: #4b3621;">Giới thiệu</a></li>
+      <li><a href="/maisondouce.html/products.html" style="text-decoration: none; color: #4b3621;">Sản phẩm</a></li>
+      <li><a href="/maisondouce.html/blog.html" style="text-decoration: none; color: #4b3621;">Blog</a></li>
+      <li><a href="/maisondouce.html/register.html" style="text-decoration: none; color: #4b3621;">Đăng nhập</a></li>
+      <li><a href="/maisondouce.html/cart.html" style="text-decoration: none; color: #4b3621;">Giỏ hàng</a></li>
+    </ul>
+  </nav>
+</header>
+
+<h2>Tuyển Dụng Maison Douce</h2>
+<p style="text-align:center; font-size: 18px; max-width: 1000px; margin: auto; font-family: 'Cormorant Garamond', serif;">
+  Tại Maison Douce, chúng tôi luôn tìm kiếm những tài năng sáng tạo, đam mê công việc và yêu thích nghệ thuật làm bánh. Tham gia đội ngũ của chúng tôi và cùng nhau mang đến những chiếc bánh gato Pháp tuyệt vời cho khách hàng!
+</p>
+
+<div id="jobsContainer" style="display: flex; justify-content: center; padding: 20px;">
+  <div class="job" style="display: flex; align-items: center; width: 100%; max-width: 1200px; background: #f9f5f0; color: #4b3621; border: 1px solid #e0dcd5; padding: 20px; border-radius: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+      <table style="width: 100%; max-width: 1000px; background: #f9f5f0; border: 1px solid #e0dcd5; border-radius: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); padding: 20px;">
+          <td style="padding: 20px; vertical-align: top; width: 50%;">
+            <h3>Nhân Viên bán hàng</h3>
+            <p><strong>Mô tả công việc:</strong> Chào đón khách hàng, tư vấn sản phẩm, xử lý thanh toán và duy trì không gian bán hàng sạch sẽ...</p>
+            <p><strong>Yêu cầu:</strong> Kỹ năng giao tiếp tốt, chăm sóc khách hàng nhiệt tình, ưu tiên có kinh nghiệm...</p>
+            <p><strong>Mức lương:</strong> <span style="color: rgb(184, 9, 9);"><b>7.000.000 – 9.000.000</b></span> VND/tháng (tùy theo kinh nghiệm)</p>
+            <p><strong>Giờ làm việc:</strong><br> + Ca sáng từ 8h00 đến 15h00<br>+ Ca chiều từ 15h00 đến 22h00</p>
+            <p><strong>Quyền lợi:</strong> Phụ cấp ăn trưa, thưởng lễ Tết, hỗ trợ đào tạo kỹ năng.</p>
+            <button onclick="toggleForm('form1')">Ứng tuyển vị trí này</button>
+          </td>
+          <td style="padding: 20px; vertical-align: middle; text-align: center; width: 50%;">
+            <img src="/maisondouce.html/careerpic/nhan-vien-ban-hang.jpg" alt="Nhân viên bán hàng" style="width: 100%; border-radius: 10px; transition: transform 0.3s ease; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" 
+            onmouseover="this.style.transform='scale(1.05)';" onmouseout="this.style.transform='scale(1)';" />
+          </td>
+      </table>
+      <table style="width: 100%; max-width: 1000px; background: #f9f5f0; border: 1px solid #e0dcd5; border-radius: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); padding: 20px;">
+        <td style="padding: 20px; vertical-align: top; width: 50%;">
+          <h3>Nhân viên bếp bánh</h3>
+          <p><strong>Mô tả công việc:</strong> Chuẩn bị và làm bánh theo công thức của tiệm, đảm bảo chất lượng và vệ sinh an toàn thực phẩm. Thực hiện các công việc liên quan đến chế biến và trang trí bánh.</p>
+          <p><strong>Yêu cầu:</strong>  Kỹ năng làm bánh, sáng tạo, có kinh nghiệm làm bánh Pháp là một lợi thế.</p>
+          <p><strong>Mức lương:</strong> <span style="color: rgb(184, 9, 9);"><b>9.000.000 – 12.000.000</b></span> VND/tháng (tùy theo kinh nghiệm)</p>
+          <p><strong>Giờ làm việc:</strong>7h00 – 15h00 (thứ Hai đến thứ Bảy).</p>
+          <p><strong>Quyền lợi:</strong> Chế độ ăn sáng tại công ty, hỗ trợ đào tạo nâng cao tay nghề, thưởng hiệu suất hàng tháng.</p>
+          <button onclick="toggleForm('form1')">Ứng tuyển vị trí này</button>
+        </td>
+        <td style="padding: 20px; vertical-align: middle; text-align: center; width: 50%;">
+          <img src="/maisondouce.html/careerpic/nhan-vien-bep-banh.jpg" alt="Nhân viên bếp bánh" style="width: 100%; border-radius: 10px; transition: transform 0.3s ease; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" 
+          onmouseover="this.style.transform='scale(1.05)';" onmouseout="this.style.transform='scale(1)';" />
+        </td>
+    </table>
+    <table style="width: 100%; max-width: 1000px; background: #f9f5f0; border: 1px solid #e0dcd5; border-radius: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); padding: 20px;">
+      <td style="padding: 20px; vertical-align: top; width: 50%;">
+        <h3>Quản lý cửa hàng</h3>
+        <p><strong>Mô tả công việc:</strong> Quản lý hoạt động của cửa hàng, điều hành đội ngũ nhân viên, đảm bảo cửa hàng hoạt động hiệu quả, tăng trưởng doanh thu và giữ gìn hình ảnh thương hiệu. Giải quyết các vấn đề phát sinh trong quá trình vận hành.</p>
+        <p><strong>Yêu cầu:</strong> Kinh nghiệm quản lý cửa hàng, kỹ năng lãnh đạo, giải quyết vấn đề nhanh chóng, am hiểu ngành bánh.</p>
+        <p><strong>Mức lương:</strong> <span style="color: rgb(184, 9, 9);"><b>15.000.000 – 20.000.000</b></span> VND/tháng (tùy theo kinh nghiệm)</p>
+        <p><strong>Giờ làm việc:</strong>8h00 – 17h00 (thứ Hai đến thứ Sáu).</p>
+        <p><strong>Quyền lợi:</strong> Mức lương hấp dẫn, thưởng theo hiệu suất công việc, bảo hiểm y tế, chế độ nghỉ phép đầy đủ, cơ hội thăng tiến.</p>
+        <button onclick="toggleForm('form1')">Ứng tuyển vị trí này</button>
+      </td>
+      <td style="padding: 20px; vertical-align: middle; text-align: center; width: 50%;">
+        <img src="/maisondouce.html/careerpic/quan-ly-cua-hang.jpg" alt="Quản lý cửa hàng" style="width: 100%; border-radius: 10px; transition: transform 0.3s ease; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" 
+        onmouseover="this.style.transform='scale(1.05)';" onmouseout="this.style.transform='scale(1)';" />
+      </td>
+  </table>
+  <table style="width: 100%; max-width: 1000px; background: #f9f5f0; border: 1px solid #e0dcd5; border-radius: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); padding: 20px;">
+    <td style="padding: 20px; vertical-align: top; width: 50%;">
+      <h3>Phụ bếp</h3>
+      <p><strong>Mô tả công việc:</strong> Chuẩn bị nguyên liệu cho quá trình làm bánh và các món khác trong tiệm,  Hỗ trợ công việc bếp chính, bao gồm việc trộn bột, tạo hình bánh, nướng, trang trí cơ bản, dọn dẹp khu vực bếp sạch sẽ sau mỗi ca làm việc.</p>
+      <p><strong>Yêu cầu:</strong> Không yêu cầu kinh nghiệm, sẽ được đào tạo tại chỗ, chăm chỉ, có tinh thần cầu tiến và học hỏi, kỹ năng làm việc nhóm tốt, có khả năng phối hợp với các bộ phận khác trong cửa hàng, có khả năng làm việc dưới áp lực trong môi trường bếp.</p>
+      <p><strong>Mức lương:</strong> <span style="color: rgb(184, 9, 9);"><b>7.000.000 – 9.000.000</b></span> VND/tháng (tùy theo kinh nghiệm)</p>
+      <p><strong>Giờ làm việc:</strong>8h00 – 17h00 (thứ Hai đến thứ Sáu).</p>
+      <p><strong>Quyền lợi:</strong> Được đào tạo và học hỏi từ những người có kinh nghiệm trong nghề bánh, chế độ đãi ngộ đầy đủ theo quy định pháp luật, lương thưởng minh bạch, có cơ hội tăng lương theo hiệu quả công việc.</p>
+      <button onclick="toggleForm('form1')">Ứng tuyển vị trí này</button>
+    </td>
+    <td style="padding: 20px; vertical-align: middle; text-align: center; width: 50%;">
+      <img src="/maisondouce.html/careerpic/phu-bep.jpg" alt="Phụ bếp" style="width: 100%; border-radius: 10px; transition: transform 0.3s ease; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" 
+      onmouseover="this.style.transform='scale(1.05)';" onmouseout="this.style.transform='scale(1)';" />
+    </td>
+  </table>
+      </div>
+    </div>
+  </div>
+
+      <form id="form1" onsubmit="return handleSubmit(event)">
+  <h3 style="margin: 0 auto; font-size: 24px; color: #4b2e1e;">Form Ứng Tuyển</h3>
+    <input type="text" placeholder="Họ và tên" required>
+    <input type="email" placeholder="Email" required>
+    <input type="tel" placeholder="Số điện thoại" required>
+    <textarea placeholder="Lý do bạn muốn ứng tuyển" rows="4"></textarea>
+    <input type="file" accept=".pdf,.doc,.docx">
+    <button type="submit">Gửi hồ sơ</button>
+</form>
+
+<script>
+    function toggleForm(id) {
+      document.getElementById('overlay').style.display = 'block';
+      const form = document.getElementById(id);
+      document.querySelectorAll('form').forEach(f => f.style.display = 'none');
+      form.style.display = 'flex';
+    }
+  
+    function closeForm() {
+      document.getElementById('overlay').style.display = 'none';
+      document.querySelectorAll('form').forEach(f => f.style.display = 'none');
+    }
+
+    function handleSubmit(event) {
+    event.preventDefault(); // Ngăn gửi form đi nơi khác (nếu dùng action)
+    alert("Cảm ơn bạn! Thông tin đã được gửi thành công.");
+    event.target.reset(); // Xoá dữ liệu trong form sau khi gửi
+    closeForm(); // Đóng form lại
+    return false; // Ngăn reload trang
+  }
+</script>
+<footer class="footer">
+  <nav>
+    <ul class="footer-list">
+        <li><a href="/maisondouce.html/contact.html" class="footer-item">Liên hệ</a></li>
+        <li><a href="/maisondouce.html/faq.html" class="footer-item">FAQ</a></li>
+        <li><a href="/maisondouce.html/career.html" class="footer-item">Tuyển dụng</a></li>
+    </ul> 
+  </nav>
+</footer>
+</body>
+</html>

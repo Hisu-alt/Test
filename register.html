@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Nhập/Đăng Ký - Maison Douce</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Cormorant+Garamond&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/maisondouce.html/style.css" />
+    <style>
+        header {
+        padding: 20px 40px; 
+        background-color: antiquewhite; 
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05); 
+        display: flex; 
+        align-items: center; 
+        justify-content: space-between;
+        }
+        .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 40px;
+        background-color: antiquewhite;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        .header h1 {
+        font-family: 'Great Vibes', cursive;
+        font-size: 42px;
+        color: #6b4e3d;
+        margin: 0;
+        }
+        .header img {
+        width: 100px;
+        height: auto;
+        margin-right: 20px;
+        }
+
+        .logo {
+        width: 100px; 
+        height: auto; 
+        margin-right: 20px
+        }
+        .maison-douce {
+        font-family: 'Great Vibes', cursive; 
+        font-size: 42px; 
+        color: #6b4e3d; 
+        margin: 0;
+        }
+        .header-list {
+        list-style: none; 
+        margin: 0; 
+        padding: 0;
+        display: flex; 
+        gap: 50px; 
+        font-family: 'Cormorant Garamond', serif; 
+        font-size: 18px
+        }  
+        .header-item {
+        text-decoration: none; 
+        color: #4b3621;
+        }
+
+        body {
+        font-family: 'Playfair Display', serif;
+        line-height: 1.8;
+        margin: 0;
+        padding: 0;
+        background-color: #fff8f0; /* Màu nền be nhạt */
+        color: #4b3621;
+        }
+        .footer{
+        display:flex; 
+        flex-direction: column; 
+        align-items:center; 
+        color: antiquewhite; 
+        font-family: 'Cormorant Garamond', serif; 
+        font-size: 18px; 
+        padding: 20px 40px; 
+        background-color: #4b3621; 
+        box-shadow: 0 -2px 8px rgba(0,0,0,0.05)
+        }
+        .footer-list {
+        list-style: none; 
+        margin: 0; 
+        padding: 0; 
+        display: flex; 
+        gap: 25px
+        }
+
+        .footer-item {
+        text-decoration: none; 
+        color: antiquewhite
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --cream: #f9f3e9;
+            --brown: #8b5a2b;
+            --brown-dark: #4b3621;
+            --pink: #f5d6c6;
+            --white: #ffffff;
+        }
+        
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            background-color: var(--cream);
+            color: var(--brown-dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .auth-section {
+            display: flex;
+            min-height: 100vh;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 0;
+        }
+        
+        .auth-container {
+            display: flex;
+            width: 100%;
+            max-width: 900px;
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .auth-image {
+            flex: 1;
+            background-image: url('https://images.unsplash.com/photo-1561702856-b4e48c261a4f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .auth-image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(75, 54, 33, 0.6);
+        }
+        
+        .auth-image-content {
+            position: relative;
+            z-index: 2;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .auth-image-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        
+        .auth-image-content p {
+            font-size: 1.1rem;
+            max-width: 80%;
+            margin: 0 auto;
+        }
+        
+        .auth-forms {
+            flex: 1;
+            padding: 40px;
+        }
+        
+        .auth-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .auth-header h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: var(--brown-dark);
+        }
+        
+        .auth-header p {
+            color: #666;
+        }
+        
+        .auth-tabs {
+            display: flex;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .auth-tab {
+            flex: 1;
+            text-align: center;
+            padding: 10px;
+            cursor: pointer;
+            font-weight: 500;
+            color: #777;
+            transition: all 0.3s;
+        }
+        
+        .auth-tab.active {
+            color: var(--brown-dark);
+            border-bottom: 2px solid var(--brown);
+        }
+        
+        .auth-form {
+            display: none;
+        }
+        
+        .auth-form.active {
+            display: block;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+            color: var(--brown-dark);
+            padding-bottom: 5px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 16px;
+            margin-top: 8px;
+        }
+        
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--brown);
+        }
+        
+        .form-actions {
+            margin-top: 30px;
+        }
+        
+        .btn {
+            background-color: var(--brown);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+            font-family: 'Cormorant Garamond', serif;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: var(--brown-dark);
+        }
+        
+        .forgot-password {
+            text-align: right;
+            margin-top: 10px;
+        }
+        
+        .forgot-password a {
+            color: var(--brown);
+            text-decoration: none;
+            font-size: 14px;
+        }
+        
+        .forgot-password a:hover {
+            text-decoration: underline;
+        }
+        
+        .social-login {
+            margin-top: 30px;
+            text-align: center;
+        }
+        
+        .social-login p {
+            margin-bottom: 15px;
+            position: relative;
+        }
+        
+        .social-login p:before,
+        .social-login p:after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            width: 35%;
+            height: 1px;
+            background-color: #ddd;
+        }
+        
+        .social-login p:before {
+            left: 0;
+        }
+        
+        .social-login p:after {
+            right: 0;
+        }
+        
+        .social-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .social-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #f5f5f5;
+            color: #333;
+            text-decoration: none;
+            font-size: 18px;
+            transition: all 0.3s;
+        }
+        
+        .social-button:hover {
+            transform: translateY(-3px);
+        }
+        
+        .social-button.facebook {
+            background-color: #3b5998;
+            color: white;
+        }
+        
+        .social-button.google {
+            background-color: #dd4b39;
+            color: white;
+        }
+        
+        .social-button.apple {
+            background-color: #000;
+            color: white;
+        }
+        
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            .auth-container {
+                flex-direction: column;
+            }
+            
+            .auth-image {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<header>
+    <div style="display: flex; align-items: center;">
+      <a href="/maisondouce.html/homepage.html" style="display: flex; align-items: center; text-decoration: none;">
+        <img src="/maisondouce.html/logobanner/logo.svg" alt="Logo Maison Douce" class="logo" />
+        <h1 class="maison-douce">Maison Douce</h1>
+      </a>
+    </div>
+  
+    <nav>
+      <ul class="header-list">
+        <li><a href="/maisondouce.html/homepage.html" class="header-item">Trang chủ</a></li>
+        <li><a href="/maisondouce.html/about.html" class="header-item">Giới thiệu</a></li>
+        <li><a href="/maisondouce.html/products.html" class="header-item">Sản phẩm</a></li>
+        <li><a href="/maisondouce.html/blog.html" class="header-item">Blog</a></li>
+        <li><a href="/maisondouce.html/register.html" class="header-item">Đăng nhập</a></li>
+        <li><a href="/maisondouce.html/cart.html" class="header-item">Giỏ hàng</a></li>
+      </ul>
+    </nav>
+  </header>
+<body>
+    
+    <section class="auth-section">
+        <div class="auth-container">
+            <div class="auth-image">
+                <div class="auth-image-overlay"></div>
+                <div class="auth-image-content">
+                    <img src="/maisondouce.html/logobanner/logo.svg" alt="Logo Maison Douce" style="width: 100px; height: auto; margin-left: 20px;" />
+                    <h1 style="font-family: 'Great Vibes', cursive; font-size: 42px; color: #6b4e3d; margin: 0;">Maison Douce</h1>
+                    <p>Khám phá thế giới bánh ngọt Pháp tinh tế và độc đáo với những chiếc bánh sinh nhật được làm thủ công từ những nguyên liệu hảo hạng.</p>
+                </div>
+            </div>
+            
+            <div class="auth-forms">
+                <div class="auth-header">
+                    <h1>Chào mừng quý khách</h1>
+                    <p>Đăng nhập hoặc đăng ký để tiếp tục</p>
+                </div>
+                
+                <div class="auth-tabs">
+                    <div class="auth-tab active" id="login-tab">Đăng Nhập</div>
+                    <div class="auth-tab" id="register-tab">Đăng Ký</div>
+                </div>
+                
+                <!-- Login Form -->
+                <form class="auth-form active" id="login-form">
+                    <div class="form-group">
+                        <label for="login-email">Email</label>
+                        <input type="email" id="login-email" name="email" required placeholder="Nhập địa chỉ email của bạn">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="login-password">Mật Khẩu</label>
+                        <input type="password" id="login-password" name="password" required placeholder="Nhập mật khẩu của bạn">
+                    </div>
+                    
+                    <div class="forgot-password">
+                        <a href="#">Quên mật khẩu?</a>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="submit" class="btn">Đăng Nhập</button>
+                    </div>
+                    
+                    <div class="social-login">
+                        <p>Hoặc đăng nhập với</p>
+                        <div class="social-buttons">
+                            <a href="#" class="social-button facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-button google"><i class="fab fa-google"></i></a>
+
+                        </div>
+                    </div>
+                </form>
+                
+                <!-- Register Form -->
+                <form class="auth-form" id="register-form">
+                    <div class="form-group">
+                        <label for="register-name">Họ và Tên</label>
+                        <input type="text" id="register-name" name="name" required placeholder="Nhập họ và tên của bạn">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="register-email">Email</label>
+                        <input type="email" id="register-email" name="email" required placeholder="Nhập địa chỉ email của bạn">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="register-phone">Số Điện Thoại</label>
+                        <input type="tel" id="register-phone" name="phone" placeholder="Nhập số điện thoại của bạn">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="register-password">Mật Khẩu</label>
+                        <input type="password" id="register-password" name="password" required placeholder="Tạo mật khẩu mới">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="register-confirm-password">Xác Nhận Mật Khẩu</label>
+                        <input type="password" id="register-confirm-password" name="confirm-password" required placeholder="Nhập lại mật khẩu">
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="submit" class="btn">Đăng Ký</button>
+                    </div>
+                    
+                    <div class="social-login">
+                        <p>Hoặc đăng ký với</p>
+                        <div class="social-buttons">
+                            <a href="#" class="social-button facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-button google"><i class="fab fa-google"></i></a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Tab switching functionality
+        const loginTab = document.getElementById('login-tab');
+        const registerTab = document.getElementById('register-tab');
+        const loginForm = document.getElementById('login-form');
+        const registerForm = document.getElementById('register-form');
+        
+        loginTab.addEventListener('click', function() {
+            loginTab.classList.add('active');
+            registerTab.classList.remove('active');
+            loginForm.classList.add('active');
+            registerForm.classList.remove('active');
+        });
+        
+        registerTab.addEventListener('click', function() {
+            registerTab.classList.add('active');
+            loginTab.classList.remove('active');
+            registerForm.classList.add('active');
+            loginForm.classList.remove('active');
+        });
+        
+        // Form validation and submission
+        document.getElementById('login-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.getElementById('login-email').value;
+            const password = document.getElementById('login-password').value;
+            
+            // Here you would typically send the login request to your server
+            // For demo purposes, we'll just show an alert
+            alert("Đăng nhập thành công với email: ${email}");
+            
+            // Redirect to home page after successful login
+            // window.location.href = 'index.html';
+        });
+        
+        document.getElementById('register-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('register-name').value;
+            const email = document.getElementById('register-email').value;
+            const password = document.getElementById('register-password').value;
+            const confirmPassword = document.getElementById('register-confirm-password').value;
+            
+            // Basic validation
+            if (password !== confirmPassword) {
+                alert('Mật khẩu xác nhận không khớp!');
+                return;
+            }
+            
+            // Here you would typically send the registration request to your server
+            // For demo purposes, we'll just show an alert
+            alert("Đăng ký thành công với tên: ${name} và email: ${email}");
+            
+            // Switch to login tab after successful registration
+            loginTab.click();
+        });
+    </script>
+    <footer class="footer">
+        <nav>
+          <ul class="footer-list">
+              <li><a href="/maisondouce.html/contact.html" class="footer-item">Liên hệ</a></li>
+              <li><a href="/maisondouce.html/faq.html" class="footer-item">FAQ</a></li>
+              <li><a href="/maisondouce.html/career.html" class="footer-item">Tuyển dụng</a></li>
+          </ul> 
+        </nav>
+    </footer>
+</body>
+</html>
